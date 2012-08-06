@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0740D84515D027C90075A32C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0740D84415D027C90075A32C /* MapViewController.m */; };
+		0740D84915D053B30075A32C /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0740D84815D053B30075A32C /* LocationAnnotation.m */; };
 		07BB7B9215CC73DA007A0531 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7B9115CC73DA007A0531 /* UIKit.framework */; };
 		07BB7B9415CC73DA007A0531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7B9315CC73DA007A0531 /* Foundation.framework */; };
 		07BB7B9615CC73DA007A0531 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7B9515CC73DA007A0531 /* CoreGraphics.framework */; };
@@ -14,10 +16,17 @@
 		07BB7B9E15CC73DA007A0531 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB7B9D15CC73DA007A0531 /* main.m */; };
 		07BB7BA215CC73DA007A0531 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB7BA115CC73DA007A0531 /* AppDelegate.m */; };
 		07BB7BA515CC73DA007A0531 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07BB7BA315CC73DA007A0531 /* MainStoryboard.storyboard */; };
-		07BB7BA815CC73DA007A0531 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB7BA715CC73DA007A0531 /* ViewController.m */; };
+		07BB7BA815CC73DA007A0531 /* UTAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB7BA715CC73DA007A0531 /* UTAViewController.m */; };
+		07BB7BAF15CC7402007A0531 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7BAE15CC7402007A0531 /* CoreLocation.framework */; };
+		07BB7BB115CC740A007A0531 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7BB015CC740A007A0531 /* MapKit.framework */; };
+		07BB7BB715CC74FF007A0531 /* UtaFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB7BB615CC74FF007A0531 /* UtaFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0740D84315D027C90075A32C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		0740D84415D027C90075A32C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		0740D84715D053B30075A32C /* LocationAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationAnnotation.h; sourceTree = "<group>"; };
+		0740D84815D053B30075A32C /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		07BB7B8D15CC73DA007A0531 /* Utah Bus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utah Bus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BB7B9115CC73DA007A0531 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07BB7B9315CC73DA007A0531 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -29,8 +38,13 @@
 		07BB7BA015CC73DA007A0531 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		07BB7BA115CC73DA007A0531 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		07BB7BA415CC73DA007A0531 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		07BB7BA615CC73DA007A0531 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		07BB7BA715CC73DA007A0531 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		07BB7BA615CC73DA007A0531 /* UTAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UTAViewController.h; sourceTree = "<group>"; };
+		07BB7BA715CC73DA007A0531 /* UTAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UTAViewController.m; sourceTree = "<group>"; };
+		07BB7BAE15CC7402007A0531 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		07BB7BB015CC740A007A0531 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		07BB7BB415CC7489007A0531 /* UtaAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UtaAPIKey.h; path = ../UtaAPIKey.h; sourceTree = "<group>"; };
+		07BB7BB515CC74FF007A0531 /* UtaFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtaFetcher.h; sourceTree = "<group>"; };
+		07BB7BB615CC74FF007A0531 /* UtaFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtaFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +52,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07BB7BB115CC740A007A0531 /* MapKit.framework in Frameworks */,
+				07BB7BAF15CC7402007A0531 /* CoreLocation.framework in Frameworks */,
 				07BB7B9215CC73DA007A0531 /* UIKit.framework in Frameworks */,
 				07BB7B9415CC73DA007A0531 /* Foundation.framework in Frameworks */,
 				07BB7B9615CC73DA007A0531 /* CoreGraphics.framework in Frameworks */,
@@ -50,6 +66,8 @@
 		07BB7B8215CC73DA007A0531 = {
 			isa = PBXGroup;
 			children = (
+				07BB7BB015CC740A007A0531 /* MapKit.framework */,
+				07BB7BAE15CC7402007A0531 /* CoreLocation.framework */,
 				07BB7B9715CC73DA007A0531 /* Utah Bus */,
 				07BB7B9015CC73DA007A0531 /* Frameworks */,
 				07BB7B8E15CC73DA007A0531 /* Products */,
@@ -77,11 +95,18 @@
 		07BB7B9715CC73DA007A0531 /* Utah Bus */ = {
 			isa = PBXGroup;
 			children = (
+				0740D84715D053B30075A32C /* LocationAnnotation.h */,
+				0740D84815D053B30075A32C /* LocationAnnotation.m */,
+				0740D84315D027C90075A32C /* MapViewController.h */,
+				0740D84415D027C90075A32C /* MapViewController.m */,
+				07BB7BB415CC7489007A0531 /* UtaAPIKey.h */,
+				07BB7BB515CC74FF007A0531 /* UtaFetcher.h */,
+				07BB7BB615CC74FF007A0531 /* UtaFetcher.m */,
 				07BB7BA015CC73DA007A0531 /* AppDelegate.h */,
 				07BB7BA115CC73DA007A0531 /* AppDelegate.m */,
 				07BB7BA315CC73DA007A0531 /* MainStoryboard.storyboard */,
-				07BB7BA615CC73DA007A0531 /* ViewController.h */,
-				07BB7BA715CC73DA007A0531 /* ViewController.m */,
+				07BB7BA615CC73DA007A0531 /* UTAViewController.h */,
+				07BB7BA715CC73DA007A0531 /* UTAViewController.m */,
 				07BB7B9815CC73DA007A0531 /* Supporting Files */,
 			);
 			path = "Utah Bus";
@@ -163,7 +188,10 @@
 			files = (
 				07BB7B9E15CC73DA007A0531 /* main.m in Sources */,
 				07BB7BA215CC73DA007A0531 /* AppDelegate.m in Sources */,
-				07BB7BA815CC73DA007A0531 /* ViewController.m in Sources */,
+				07BB7BA815CC73DA007A0531 /* UTAViewController.m in Sources */,
+				07BB7BB715CC74FF007A0531 /* UtaFetcher.m in Sources */,
+				0740D84515D027C90075A32C /* MapViewController.m in Sources */,
+				0740D84915D053B30075A32C /* LocationAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +307,7 @@
 				07BB7BAD15CC73DA007A0531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
