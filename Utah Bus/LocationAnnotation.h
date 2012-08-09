@@ -11,7 +11,7 @@
 
 @interface LocationAnnotation : NSObject <MKAnnotation>
 
-+ (LocationAnnotation *) annotationForVehicleOrStop: (NSDictionary *) vehicleOrStop;
-@property (nonatomic, strong) NSDictionary *vehicleOrStop;
++ (LocationAnnotation *) annotationForVehicleOrStop: (NSDictionary *) vehicleInfo;
+@property (nonatomic, strong) NSDictionary *vehicleInfo;
 
 @end

@@ -15,27 +15,13 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Route Name" minimumFontSize="17" id="pVE-Cs-sgb">
-                                <rect key="frame" x="112" y="91" width="97" height="31"/>
+                                <rect key="frame" x="112" y="102" width="97" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="XZh-hB-nna">
-                                <rect key="frame" x="171" y="152" width="79" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="showStops:" destination="2" eventType="valueChanged" id="oN1-l7-ug7"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Show Stops" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="crY-Tw-Uv6">
-                                <rect key="frame" x="70" y="155" width="93" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="JRD-67-pit">
-                                <rect key="frame" x="95" y="206" width="130" height="37"/>
+                                <rect key="frame" x="95" y="189" width="130" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Show Buses">
@@ -47,7 +33,6 @@
                                 </state>
                                 <connections>
                                     <action selector="showBuses:" destination="2" eventType="touchUpInside" id="l0s-zf-baD"/>
-                                    <segue destination="Fdf-Q3-28X" kind="push" identifier="show on map" id="6kn-Ob-DY5"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -56,11 +41,11 @@
                     <navigationItem key="navigationItem" title="Route Search" id="GvD-fj-EsP"/>
                     <connections>
                         <outlet property="routeName" destination="pVE-Cs-sgb" id="Xdn-tV-eE2"/>
-                        <outlet property="showStops" destination="XZh-hB-nna" id="a8j-HA-ZJ5"/>
+                        <segue destination="Fdf-Q3-28X" kind="push" identifier="show on map" id="J8o-SJ-0ra"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1495" y="-393"/>
+            <point key="canvasLocation" x="1419" y="-441"/>
         </scene>
         <!--Map View Controller-->
         <scene sceneID="pxA-1a-IWz">
@@ -71,7 +56,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="Y2V-cj-Pwk">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" id="Y2V-cj-Pwk">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
@@ -82,54 +67,73 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="puw-96-8HV"/>
+                    <connections>
+                        <outlet property="mapView" destination="Y2V-cj-Pwk" id="hhT-dh-yZZ"/>
+                        <segue destination="L0B-9V-Zm9" kind="push" identifier="show stops" id="x61-MT-36Q"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="1936" y="-634"/>
         </scene>
-        <!--View Controller - Vehicle-->
-        <scene sceneID="Iqq-Mz-L2r">
+        <!--Stop View Controller-->
+        <scene sceneID="Sgi-H6-SYe">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AuE-M0-2gQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="b8Y-oB-JDy" customClass="UTAViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Cpk-Gu-4IO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Vehicle" id="ZLM-5u-Sr9"/>
-                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5yY-l7-6Kl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="L0B-9V-Zm9" customClass="StopViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="QMK-Qx-c5E">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="stop name cells" id="eUI-gg-93T">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="L0B-9V-Zm9" id="x6U-sC-4sT"/>
+                            <outlet property="delegate" destination="L0B-9V-Zm9" id="W3Z-tp-870"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="YxL-At-kFF"/>
+                </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2583" y="-145"/>
+            <point key="canvasLocation" x="2982" y="-629"/>
         </scene>
-        <!--View Controller - Bus Stop-->
+        <!--View Controller-->
         <scene sceneID="utb-L8-yGN">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2c-4I-8NC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="7YM-Au-yfl" customClass="UTAViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UyS-uZ-CCv">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Bus Stop" id="7wf-gw-JS2"/>
+                    <navigationItem key="navigationItem" id="pLq-BL-oJx"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="969" y="647"/>
+            <point key="canvasLocation" x="1495" y="647"/>
         </scene>
-        <!--View Controller - Close To You-->
+        <!--View Controller-->
         <scene sceneID="FAH-0J-wVw">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="47X-fR-Zf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="3H4-k3-6PE" customClass="UTAViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XYO-Oh-yk5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Close To You" id="4lO-19-kbr"/>
+                    <navigationItem key="navigationItem" id="eAb-Y0-eA3"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="1541" y="401"/>
+            <point key="canvasLocation" x="2593" y="401"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ddQ-Tl-21W">
@@ -144,9 +148,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="TfD-V3-kVj" kind="relationship" relationship="viewControllers" id="FtG-wb-jKf"/>
-                        <segue destination="b8Y-oB-JDy" kind="relationship" relationship="viewControllers" id="2ga-Mg-8CX"/>
-                        <segue destination="7YM-Au-yfl" kind="relationship" relationship="viewControllers" id="RHu-Ff-UqD"/>
-                        <segue destination="3H4-k3-6PE" kind="relationship" relationship="viewControllers" id="nwN-dh-Y7J"/>
+                        <segue destination="IJm-hL-w4z" kind="relationship" relationship="viewControllers" id="RHu-Ff-UqD"/>
+                        <segue destination="h1f-f0-LRU" kind="relationship" relationship="viewControllers" id="nwN-dh-Y7J"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -169,21 +172,47 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="969" y="-393"/>
+            <point key="canvasLocation" x="907" y="-441"/>
+        </scene>
+        <!--Navigation Controller - Bus Stop-->
+        <scene sceneID="dBZ-vY-K5H">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y5f-FY-AkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="IJm-hL-w4z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bus Stop" id="7wf-gw-JS2"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="INW-uY-LIi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7YM-Au-yfl" kind="relationship" relationship="rootViewController" id="Mk6-iV-qFr"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="969" y="647"/>
+        </scene>
+        <!--Navigation Controller - Close To You-->
+        <scene sceneID="JGx-G6-AOm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vW3-5b-M6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="h1f-f0-LRU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Close To You" id="4lO-19-kbr"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6KJ-7z-b5e">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3H4-k3-6PE" kind="relationship" relationship="rootViewController" id="fTb-2z-OXW"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2067" y="401"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="MapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapViewController.h"/>
-        </class>
-        <class className="UTAViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UTAViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="routeName" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="showStops" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

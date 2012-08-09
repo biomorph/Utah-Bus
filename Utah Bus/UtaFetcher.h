@@ -15,11 +15,13 @@
 #define LONGITUDE @"Longitude"
 #define PROGRESS_RATE @"ProgressRate"
 #define DEPARTURE_TIME @"EstimatedDepartureTime"
-#define DIRECTION_OF_VEHICLE @"Direction"
-#define STOP_ID_ALONG_THE_WAY @"StopPointRef"
+#define DIRECTION_OF_VEHICLE @"DirectionRef"
+//#define STOP_ID_ALONG_THE_WAY @"StopPointRef"
+#define STOP_NAME @"StopPointName"
 
 @interface UtaFetcher:NSObject <NSXMLParserDelegate>
-@property (nonatomic, strong) NSMutableDictionary *vehicleInfo;
-- (NSDictionary *) executeUtaFetcher :(NSString *) forQuery;
+@property (nonatomic, strong) NSMutableArray *vehicleInfoArray;
+@property (nonatomic, strong) NSMutableArray *stopInfoArray;
+- (NSArray *) executeUtaFetcher :(NSString *) forQuery;
 
 @end

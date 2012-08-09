@@ -9,12 +9,14 @@
 #import "UTAViewController.h"
 #import "UtaFetcher.h"
 #import "MapViewController.h"
+#import "LocationAnnotation.h"
 
 @interface UTAViewController ()
 
 @property (nonatomic, strong) NSString *onwardCalls;
-@property (nonatomic, strong) NSDictionary *vehicleInfo;
+@property (nonatomic, strong) NSArray *vehicleInfoArray;
 @property (nonatomic, strong) UtaFetcher *utaFetcher;
+@property (nonatomic, strong) LocationAnnotation *annotation;
 @end
 
 @implementation UTAViewController
@@ -22,7 +24,7 @@
 @synthesize showStops = _showStops;
 @synthesize onwardCalls = _onwardCalls;
 @synthesize utaFetcher = _utaFetcher;
-@synthesize vehicleInfo = _vehicleInfo;
+@synthesize vehicleInfoArray = _vehicleInfoArray;
 
 
 - (UtaFetcher *) utaFetcher
@@ -34,39 +36,54 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.onwardCalls = @"false";
-	// Do any additional setup after loading the view, typically from a nib.
+    //NSString *routeFileString = [NSString stringWithContentsOfFile:<#(NSString *)#> encoding:<#(NSStringEncoding)#> error:<#(NSError *__autoreleasing *)#>]
+    	// Do any additional setup after loading the view, typically from a nib.
 }
-- (IBAction)showStops:(id)sender {
-    if (self.showStops.on) self.onwardCalls = @"true";
-    else self.onwardCalls = @"false";
+
+//This method dismisses the onscreen keyboard when touched away from text field
+- (void)touchesEnded: (NSSet *)touches withEvent: (UIEvent *)event {
+    
+    for (UIView* view in self.view.subviews) {
+        
+        if ([view isKindOfClass:[UITextField class]])
+            
+            [view resignFirstResponder];
+        
+    }
+    
 }
+
 - (IBAction)showBuses:(id)sender {
-    NSString *urlString = [NSString stringWithFormat:@"http://api.rideuta.com/SIRI/SIRI.svc/VehicleMonitor/ByRoute?route=%@&onwardcalls=%@&usertoken=%@",self.routeName.text,self.onwardCalls,UtaAPIKey];
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    [spinner startAnimating];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:spinner];
+    NSString *urlString = [NSString stringWithFormat:@"http://api.rideuta.com/SIRI/SIRI.svc/VehicleMonitor/ByRoute?route=%@&onwardcalls=true&usertoken=%@",self.routeName.text,UtaAPIKey];
     dispatch_queue_t xmlGetter = dispatch_queue_create("UTA xml getter", NULL);
     dispatch_async(xmlGetter, ^{
-        self.vehicleInfo = [self.utaFetcher executeUtaFetcher:urlString];
+        self.vehicleInfoArray = [self.utaFetcher executeUtaFetcher:urlString];
+        [spinner stopAnimating];
     dispatch_async(dispatch_get_main_queue(), ^{
-        //[self performSegueWithIdentifier:@"show on map" sender:sender];
+        [self performSegueWithIdentifier:@"show on map" sender:sender];
     });
     });
     dispatch_release(xmlGetter);
-    
+   
 
+}
+- (NSArray *) mapAnnotations
+{
+    NSMutableArray *annotations = [NSMutableArray arrayWithCapacity:[self.vehicleInfoArray count]];
+    for(NSDictionary *vehicle in self.vehicleInfoArray){
+        [annotations addObject:[LocationAnnotation annotationForVehicleOrStop:vehicle]];
+        
+    }
+    return annotations;
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    NSArray *latitudes = [self.vehicleInfo objectForKey:LATITUDE];
-    NSArray *longitudes = [self.vehicleInfo objectForKey:LONGITUDE];
-    NSMutableArray *locations = [NSMutableArray arrayWithCapacity:[latitudes count]];
-    for (int count = 0; count <= [latitudes count]; count++) {
-        NSArray *location = [NSArray arrayWithObjects:[latitudes objectAtIndex:count],[longitudes objectAtIndex:count], nil];
-        [locations addObject:location];
-    }
-    NSDictionary *coordinates = [NSDictionary dictionaryWithObject:locations forKey:@"bus locations"];
-    if([segue.identifier isEqualToString:@"show on map"]){
-        [segue.destinationViewController setCoordinates:coordinates];
+    if ([segue.identifier isEqualToString:@"show on map"]){
+        [segue.destinationViewController setAnnotations:[self mapAnnotations]];
     }
 }
 
