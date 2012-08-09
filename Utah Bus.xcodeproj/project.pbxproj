@@ -10,6 +10,15 @@
 		0740D84515D027C90075A32C /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0740D84415D027C90075A32C /* MapViewController.m */; };
 		0740D84915D053B30075A32C /* LocationAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0740D84815D053B30075A32C /* LocationAnnotation.m */; };
 		07512F5715D1BF2D00FC9D84 /* StopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07512F5615D1BF2D00FC9D84 /* StopViewController.m */; };
+		078EBDD115D380D800FCA1D9 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 078EBDD015D380D700FCA1D9 /* CoreData.framework */; };
+		078EBE0B15D3866D00FCA1D9 /* UTAGTFS.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 078EBE0A15D3866D00FCA1D9 /* UTAGTFS.sqlite */; };
+		078EBE0E15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078EBE0C15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodeld */; };
+		078EBE1015D38E1800FCA1D9 /* UTAGTFSModel.xcdatamodeld in CopyFiles */ = {isa = PBXBuildFile; fileRef = 078EBE0C15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodeld */; };
+		078EBE1315D3903000FCA1D9 /* UTAGTFS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 078EBE1115D3903000FCA1D9 /* UTAGTFS.xcdatamodeld */; };
+		078EBE1615D395C000FCA1D9 /* Trips.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EBE1515D395C000FCA1D9 /* Trips.m */; };
+		078EBE1915D395C100FCA1D9 /* Stops.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EBE1815D395C000FCA1D9 /* Stops.m */; };
+		078EBE1C15D395C100FCA1D9 /* Shapes.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EBE1B15D395C100FCA1D9 /* Shapes.m */; };
+		078EBE1F15D395C100FCA1D9 /* Routes.m in Sources */ = {isa = PBXBuildFile; fileRef = 078EBE1E15D395C100FCA1D9 /* Routes.m */; };
 		07BB7B9215CC73DA007A0531 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7B9115CC73DA007A0531 /* UIKit.framework */; };
 		07BB7B9415CC73DA007A0531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7B9315CC73DA007A0531 /* Foundation.framework */; };
 		07BB7B9615CC73DA007A0531 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07BB7B9515CC73DA007A0531 /* CoreGraphics.framework */; };
@@ -23,6 +32,19 @@
 		07BB7BB715CC74FF007A0531 /* UtaFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 07BB7BB615CC74FF007A0531 /* UtaFetcher.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		078EBE0F15D38E0900FCA1D9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				078EBE1015D38E1800FCA1D9 /* UTAGTFSModel.xcdatamodeld in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0740D84315D027C90075A32C /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		0740D84415D027C90075A32C /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
@@ -30,6 +52,18 @@
 		0740D84815D053B30075A32C /* LocationAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationAnnotation.m; sourceTree = "<group>"; };
 		07512F5515D1BF2D00FC9D84 /* StopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StopViewController.h; sourceTree = "<group>"; };
 		07512F5615D1BF2D00FC9D84 /* StopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StopViewController.m; sourceTree = "<group>"; };
+		078EBDD015D380D700FCA1D9 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		078EBE0A15D3866D00FCA1D9 /* UTAGTFS.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = UTAGTFS.sqlite; sourceTree = "<group>"; };
+		078EBE0D15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UTAGTFSModel.xcdatamodel; sourceTree = "<group>"; };
+		078EBE1215D3903000FCA1D9 /* UTAGTFS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UTAGTFS.xcdatamodel; sourceTree = "<group>"; };
+		078EBE1415D395C000FCA1D9 /* Trips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Trips.h; sourceTree = "<group>"; };
+		078EBE1515D395C000FCA1D9 /* Trips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Trips.m; sourceTree = "<group>"; };
+		078EBE1715D395C000FCA1D9 /* Stops.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stops.h; sourceTree = "<group>"; };
+		078EBE1815D395C000FCA1D9 /* Stops.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stops.m; sourceTree = "<group>"; };
+		078EBE1A15D395C100FCA1D9 /* Shapes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shapes.h; sourceTree = "<group>"; };
+		078EBE1B15D395C100FCA1D9 /* Shapes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shapes.m; sourceTree = "<group>"; };
+		078EBE1D15D395C100FCA1D9 /* Routes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Routes.h; sourceTree = "<group>"; };
+		078EBE1E15D395C100FCA1D9 /* Routes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Routes.m; sourceTree = "<group>"; };
 		07BB7B8D15CC73DA007A0531 /* Utah Bus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Utah Bus.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BB7B9115CC73DA007A0531 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		07BB7B9315CC73DA007A0531 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -55,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				078EBDD115D380D800FCA1D9 /* CoreData.framework in Frameworks */,
 				07BB7BB115CC740A007A0531 /* MapKit.framework in Frameworks */,
 				07BB7BAF15CC7402007A0531 /* CoreLocation.framework in Frameworks */,
 				07BB7B9215CC73DA007A0531 /* UIKit.framework in Frameworks */,
@@ -69,6 +104,7 @@
 		07BB7B8215CC73DA007A0531 = {
 			isa = PBXGroup;
 			children = (
+				078EBDD015D380D700FCA1D9 /* CoreData.framework */,
 				07BB7BB015CC740A007A0531 /* MapKit.framework */,
 				07BB7BAE15CC7402007A0531 /* CoreLocation.framework */,
 				07BB7B9715CC73DA007A0531 /* Utah Bus */,
@@ -98,6 +134,17 @@
 		07BB7B9715CC73DA007A0531 /* Utah Bus */ = {
 			isa = PBXGroup;
 			children = (
+				078EBE0C15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodeld */,
+				078EBE1115D3903000FCA1D9 /* UTAGTFS.xcdatamodeld */,
+				078EBE1D15D395C100FCA1D9 /* Routes.h */,
+				078EBE1E15D395C100FCA1D9 /* Routes.m */,
+				078EBE1A15D395C100FCA1D9 /* Shapes.h */,
+				078EBE1B15D395C100FCA1D9 /* Shapes.m */,
+				078EBE1715D395C000FCA1D9 /* Stops.h */,
+				078EBE1815D395C000FCA1D9 /* Stops.m */,
+				078EBE1415D395C000FCA1D9 /* Trips.h */,
+				078EBE1515D395C000FCA1D9 /* Trips.m */,
+				078EBE0A15D3866D00FCA1D9 /* UTAGTFS.sqlite */,
 				07512F5515D1BF2D00FC9D84 /* StopViewController.h */,
 				07512F5615D1BF2D00FC9D84 /* StopViewController.m */,
 				0740D84715D053B30075A32C /* LocationAnnotation.h */,
@@ -139,6 +186,7 @@
 				07BB7B8A15CC73DA007A0531 /* Frameworks */,
 				07BB7B8B15CC73DA007A0531 /* Resources */,
 				50524F424C454D533F /* ShellScript */,
+				078EBE0F15D38E0900FCA1D9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -182,27 +230,11 @@
 			files = (
 				07BB7B9C15CC73DA007A0531 /* InfoPlist.strings in Resources */,
 				07BB7BA515CC73DA007A0531 /* MainStoryboard.storyboard in Resources */,
+				078EBE0B15D3866D00FCA1D9 /* UTAGTFS.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		50524F424C454D533F /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "export CODESIGN_ALLOCATE=/Library/JailCoder/codesign_allocate\nif [ \"${PLATFORM_NAME}\" == \"iphoneos\" ]; then\n/Library/JailCoder/Entitlements/Entitlements.py \"my.company.${PROJECT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\";\ncodesign -f -s \"iPhone Developer\" --entitlements \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/${PROJECT_NAME}.xcent\" \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}/\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 
 /* Begin PBXShellScriptBuildPhase section */
 		50524F424C454D533F /* ShellScript */ = {
@@ -232,6 +264,12 @@
 				0740D84515D027C90075A32C /* MapViewController.m in Sources */,
 				0740D84915D053B30075A32C /* LocationAnnotation.m in Sources */,
 				07512F5715D1BF2D00FC9D84 /* StopViewController.m in Sources */,
+				078EBE0E15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodeld in Sources */,
+				078EBE1315D3903000FCA1D9 /* UTAGTFS.xcdatamodeld in Sources */,
+				078EBE1615D395C000FCA1D9 /* Trips.m in Sources */,
+				078EBE1915D395C100FCA1D9 /* Stops.m in Sources */,
+				078EBE1C15D395C100FCA1D9 /* Shapes.m in Sources */,
+				078EBE1F15D395C100FCA1D9 /* Routes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +390,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		078EBE0C15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				078EBE0D15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodel */,
+			);
+			currentVersion = 078EBE0D15D38DAE00FCA1D9 /* UTAGTFSModel.xcdatamodel */;
+			path = UTAGTFSModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		078EBE1115D3903000FCA1D9 /* UTAGTFS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				078EBE1215D3903000FCA1D9 /* UTAGTFS.xcdatamodel */,
+			);
+			currentVersion = 078EBE1215D3903000FCA1D9 /* UTAGTFS.xcdatamodel */;
+			path = UTAGTFS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 07BB7B8415CC73DA007A0531 /* Project object */;
 }

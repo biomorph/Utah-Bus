@@ -7,13 +7,26 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Utah Bus/UTAViewController.m"
-         timestampString = "366070639.994058"
+         filePath = "Utah Bus/AppDelegate.m"
+         timestampString = "366187519.21951"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
-         landmarkName = "-showBuses:"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
+         landmarkName = "-managedObjectModel"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Utah Bus/UTAViewController.m"
+         timestampString = "366188117.835714"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "47"
+         endingLineNumber = "47"
+         landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

@@ -120,21 +120,6 @@
             </objects>
             <point key="canvasLocation" x="1495" y="647"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="FAH-0J-wVw">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="47X-fR-Zf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="3H4-k3-6PE" customClass="UTAViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XYO-Oh-yk5">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="eAb-Y0-eA3"/>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2593" y="401"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ddQ-Tl-21W">
             <objects>
@@ -149,7 +134,6 @@
                     <connections>
                         <segue destination="TfD-V3-kVj" kind="relationship" relationship="viewControllers" id="FtG-wb-jKf"/>
                         <segue destination="IJm-hL-w4z" kind="relationship" relationship="viewControllers" id="RHu-Ff-UqD"/>
-                        <segue destination="h1f-f0-LRU" kind="relationship" relationship="viewControllers" id="nwN-dh-Y7J"/>
                     </connections>
                 </tabBarController>
             </objects>
@@ -192,25 +176,6 @@
                 </navigationController>
             </objects>
             <point key="canvasLocation" x="969" y="647"/>
-        </scene>
-        <!--Navigation Controller - Close To You-->
-        <scene sceneID="JGx-G6-AOm">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vW3-5b-M6w" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <navigationController id="h1f-f0-LRU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Close To You" id="4lO-19-kbr"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6KJ-7z-b5e">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="3H4-k3-6PE" kind="relationship" relationship="rootViewController" id="fTb-2z-OXW"/>
-                    </connections>
-                </navigationController>
-            </objects>
-            <point key="canvasLocation" x="2067" y="401"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

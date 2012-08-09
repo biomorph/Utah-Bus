@@ -21,10 +21,10 @@
 
 @implementation UTAViewController
 @synthesize routeName = _routeName;
-@synthesize showStops = _showStops;
 @synthesize onwardCalls = _onwardCalls;
 @synthesize utaFetcher = _utaFetcher;
 @synthesize vehicleInfoArray = _vehicleInfoArray;
+@synthesize managedObjectContext = _managedObjectContext;
 
 
 - (UtaFetcher *) utaFetcher
@@ -36,8 +36,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //NSString *routeFileString = [NSString stringWithContentsOfFile:<#(NSString *)#> encoding:<#(NSStringEncoding)#> error:<#(NSError *__autoreleasing *)#>]
-    	// Do any additional setup after loading the view, typically from a nib.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Routes"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:NULL];
+    for (NSManagedObject *route in fetchedObjects){
+        NSLog(@"routeID is %@",[route valueForKey:@"route_long_name"]);
+    }
 }
 
 //This method dismisses the onscreen keyboard when touched away from text field
@@ -90,7 +96,6 @@
 - (void)viewDidUnload
 {
     [self setRouteName:nil];
-    [self setShowStops:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }

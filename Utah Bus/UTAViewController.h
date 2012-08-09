@@ -11,11 +11,17 @@
 #import <CoreLocation/CoreLocation.h>
 #import "UtaFetcher.h"
 #import "UtaAPIKey.h"
+#import <CoreData/CoreData.h>
+#import "Routes.h"
+#import "Shapes.h"
+#import "Stops.h"
+#import "Trips.h"
 
 
 
-@interface UTAViewController : UIViewController
+@interface UTAViewController : UIViewController <NSFetchedResultsControllerDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *routeName;
-@property (strong, nonatomic) IBOutlet UISwitch *showStops;
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
